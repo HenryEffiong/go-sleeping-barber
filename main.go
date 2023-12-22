@@ -61,6 +61,7 @@ func main() {
 	color.Green("The shop is open for the day!")
 	// add barbers
 	shop.addBarber("Peter")
+	shop.addBarber("John")
 	shopClosing := make(chan bool)
 	closed := make(chan bool)
 
