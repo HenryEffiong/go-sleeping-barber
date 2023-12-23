@@ -14,7 +14,7 @@ var arrivalRate = 100
 func main() {
 	// seed random channel
 	rand.New(rand.NewSource(time.Now().UnixNano()))
-	
+
 	// print out our welcome message
 	color.Green("======Opening for the day========")
 
@@ -61,7 +61,7 @@ func main() {
 	}()
 
 	// finish for the day
-
+	<-closed
 }
 
 type BarbingSalon struct {
@@ -81,7 +81,7 @@ func (shop *BarbingSalon) addBarber(barber string) {
 	go func() {
 		for {
 			if len(shop.ClientChan) == 0 {
-				color.Yellow("No clients, %s takes a nap")
+				color.Yellow("No clients, %s takes a nap", barber)
 				isSleeping = true
 			}
 
