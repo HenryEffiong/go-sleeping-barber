@@ -71,7 +71,7 @@ func (shop *BarberShop) closeShop() {
 	color.Green("Closed for the day, all the barbers have left the shop.")
 }
 
-func (shop BarberShop) addClient(client string) {
+func (shop *BarberShop) addClient(client string) {
 	// print message
 	color.Green("***** %s arrives!", client)
 	if shop.Open {
